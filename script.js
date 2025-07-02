@@ -5,7 +5,7 @@ const movieResults = document.getElementById('movie-results');
 const watchlist = new Set(); // Use a Set to avoid duplicates
 const watchlistContainer = document.getElementById('watchlist');
 
-const apiKey = 'your-api-key'; // Replace with your OMDb API key
+const apiKey = '4caa37ac'; // Replace with your OMDb API key
 
 const modal = document.getElementById('movie-modal');
 const modalContent = document.getElementById('modal-movie-details');
@@ -85,8 +85,10 @@ async function updateWatchlistDisplay() {
           <div class="movie-info">
             <h3 class="movie-title">${movie.Title}</h3>
             <p class="movie-year">${movie.Year}</p>
-            <button class="btn btn-details">Details</button>
-            <button class="btn btn-remove" onclick='removeFromWatchlist("${movie.imdbID}")'>Remove</button>
+            <div class="button-container">
+              <button class="btn btn-details">Details</button>
+              <button class="btn btn-remove" onclick='removeFromWatchlist("${movie.imdbID}")'>Remove</button>
+            </div>
           </div>
         `;
 
@@ -176,8 +178,10 @@ function displayMovies(movies) {
       <div class="movie-info">
         <h3 class="movie-title">${movie.Title}</h3>
         <p class="movie-year">${movie.Year}</p>
-        <button class="btn btn-details">Details</button>
-        <button class="btn btn-add">Add to Watchlist</button>
+        <div class="button-container">
+          <button class="btn btn-details">Details</button>
+          <button class="btn btn-add">Add to Watchlist</button>
+        </div>
       </div>
     `;
 
